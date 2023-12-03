@@ -65,10 +65,16 @@ def compute_rows(n, f):
 def mandelbrot(n):
     write = stdout.buffer.write
 
-    with closing(compute_rows(n, compute_row)) as rows:
-        write("P4\n{0} {0}\n".format(n).encode())
-        for row in rows:
-            write(row[1])
+    num_iterations = 15  # Set the desired number of iterations
+
+    for iteration in range(1, num_iterations + 1):
+        print(f"Iteration {iteration}:")
+
+        with closing(compute_rows(n, compute_row)) as rows:
+            write("P4\n{0} {0}\n".format(n).encode())
+            for row in rows:
+                write(row[1])
+
 
 if __name__ == '__main__':
     mandelbrot(int(argv[1]))

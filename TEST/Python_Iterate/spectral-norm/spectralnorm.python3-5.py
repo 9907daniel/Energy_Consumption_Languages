@@ -43,20 +43,24 @@ def part_At_times_u(xxx_todo_changeme1):
 
 def main():
     n = int(argv[1])
-    u = [1] * n
+    num_iterations = 20  # Set the desired number of iterations
 
-    for dummy in range (10):
-        v = eval_AtA_times_u (u)
-        u = eval_AtA_times_u (v)
+    for iteration in range(1, num_iterations + 1):
+        print(f"Iteration {iteration}:")
+        u = [1] * n
 
-    vBv = vv = 0
+        for dummy in range(10):
+            v = eval_AtA_times_u(u)
+            u = eval_AtA_times_u(v)
 
-    for ue, ve in zip (u, v):
-        vBv += ue * ve
-        vv  += ve * ve
+        vBv = vv = 0
 
-    print("%0.9f" % (sqrt(vBv/vv)))
+        for ue, ve in zip(u, v):
+            vBv += ue * ve
+            vv += ve * ve
 
+        print("%0.9f" % (sqrt(vBv / vv)))
+        
 if __name__ == '__main__':
     pool = Pool(processes=4)
     main()
