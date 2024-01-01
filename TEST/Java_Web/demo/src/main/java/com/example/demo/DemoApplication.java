@@ -72,10 +72,10 @@ public class DemoApplication implements CommandLineRunner {
         String filePath = "src/main/resources/static/test.txt";
         File fileToUpload = new File(filePath);
 
-        for (int i = 0; i < 100000; i++) {
-            int randomNumber = generateRandomNumber();
+        // for (int i = 0; i < 100000; i++) {
+        int randomNumber = generateRandomNumber();
             // System.out.println("Random Number: " + randomNumber);
-        }
+        // }
 
 		System.exit(SpringApplication.exit(SpringApplication.run(DemoApplication.class)));
 	    }
